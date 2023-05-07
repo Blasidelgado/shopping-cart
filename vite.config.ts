@@ -10,6 +10,7 @@ import tsconfig from './tsconfig.json';
 
 dotenv.config();
 
+// automatically map path aliases
 const rawAlias = tsconfig.compilerOptions.paths;
 const alias = {};
 
