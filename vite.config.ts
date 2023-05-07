@@ -1,4 +1,4 @@
-import { defineConfig, configDefaults } from 'vitest/config';
+import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import istanbul from 'vite-plugin-istanbul';
 import dotenv from 'dotenv';
@@ -18,18 +18,5 @@ export default defineConfig({
 	server: {
 		host: true,
 		port: process.env.PORT ? +process.env.PORT : 5173,
-	},
-	test: {
-		globals: true,
-		environment: 'jsdom',
-		setupFiles: './src/test.setup.ts',
-		coverage: {
-			all: true,
-			provider: 'istanbul',
-			reporter: ['text', 'html', 'clover', 'json', 'lcov'],
-			reportsDirectory: './coverage/vitest',
-			include: ['src/**/*.{js,jsx,ts,tsx}'],
-			exclude: [...configDefaults.exclude, 'src/test.setup.ts'],
-		},
 	},
 });
