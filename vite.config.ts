@@ -1,7 +1,7 @@
-import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import istanbul from 'vite-plugin-istanbul';
 import dotenv from 'dotenv';
+import { defineConfig } from 'vite';
+import istanbul from 'vite-plugin-istanbul';
 
 dotenv.config();
 

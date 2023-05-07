@@ -1,6 +1,6 @@
+import registerCodeCoverageTasks from '@cypress/code-coverage/task';
 import { defineConfig } from 'cypress';
 import dotenv from 'dotenv';
-import registerCodeCoverageTasks from '@cypress/code-coverage/task';
 
 dotenv.config();
 
