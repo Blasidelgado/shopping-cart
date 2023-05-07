@@ -7,14 +7,13 @@ Template for building Web Apps using React + Vite.
 - React
 - Vite
 - Tailwind
+- React Router
 - Eslint
 - Prettier
 - Husky
 - lint-staged
 - editorconfig
-- Vitest
-- React Testing Library
-- Cypress
+- Cypress with code coverage
 
 # Setup
 
@@ -37,8 +36,6 @@ npm run start:dev # Run app in development
 # Testing
 
 ```
-npm run test # Run unit tests once
-npm run test:watch # Run unit tests and keep watching for changes
 npm run test:ui # Run UI tests in headless mode
 npm run test:ui:dev # Run UI in browser mode
 ```
@@ -64,12 +61,12 @@ Files that are not tested are displayed in the final cypress report as having "e
 - [React docs](https://react.dev/learn)
 - [Vite docs](https://vitejs.dev/guide/)
 - [Vite + Tailwind setup](https://tailwindcss.com/docs/guides/vite)
+- [React Router docs](https://reactrouter.com/en/main)
 - [eslint + prettier + editorconfig setup](https://dev.to/npranto/how-i-setup-eslint-prettier-and-editorconfig-for-static-sites-33ep)
-- [lint-staged](https://github.com/okonet/lint-staged)
-- [Vitest test framework](https://vitest.dev/)
-- [React Testing Library docs](https://testing-library.com/docs/react-testing-library/intro/)
-- [React Testing Library Tutorial](https://www.robinwieruch.de/react-testing-library/)
+- [Husky docs](https://github.com/typicode/husky)
+- [lint-staged docs](https://github.com/okonet/lint-staged)
+- [Vite path aliasing](https://dev.to/avxkim/setup-path-aliases-w-react-vite-ts-poa)
 - [Cypress docs](https://docs.cypress.io/guides/overview/why-cypress)
 - [Vite + React + Cypress + coverage](https://medium.com/@nelfayran/cypress-react-and-vite-collaboration-bed6761808fc)
-- [@cypress/code-coverage](https://github.com/cypress-io/code-coverage)
-- [nyc](https://github.com/istanbuljs/nyc)
+- [@cypress/code-coverage docs](https://github.com/cypress-io/code-coverage)
+- [nyc docs](https://github.com/istanbuljs/nyc)
