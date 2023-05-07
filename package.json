@@ -14,7 +14,7 @@
 		"cy:run": "cypress run",
 		"cy:serve:ci": "start-server-and-test start:dev http-get://127.0.0.1:3000 cy:run",
 		"cy:serve:app": "start-server-and-test start:dev http-get://127.0.0.1:3000 cy:open",
-		"nyc:cov": "npx nyc report --reporter=lcov --reporter=text-summary",
+		"nyc:cov": "npx nyc report --reporter text",
 		"test": "vitest run --coverage",
 		"test:watch": "vitest --coverage",
 		"test:ui": "run-s cy:serve:ci nyc:cov",
