@@ -54,6 +54,8 @@ npm run format # Run formatter
 
 Files that are not tested are displayed in the final cypress report as having "empty" coverage. They should display 0% coverage.
 
+![image](https://user-images.githubusercontent.com/60404954/236656815-84ee0d06-8375-4509-9578-c8ff2436c9c2.png)
+
 - https://github.com/cypress-io/code-coverage/issues/539
 - https://github.com/cypress-io/code-coverage/issues/552
 
