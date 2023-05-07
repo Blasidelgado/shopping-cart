@@ -5,8 +5,8 @@ describe('Home page', () => {
 	});
 
 	it('Should render correctly', () => {
-		cy.getBySel('header-msg')
+		cy.getBySel('home-msg')
 			.should('be.visible')
-			.and('have.text', 'Hello world!');
+			.and('have.text', 'This is the homepage!');
 	});
 });
