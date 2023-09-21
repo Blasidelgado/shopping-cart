@@ -22,7 +22,11 @@ Template for building Web Apps using React + Vite.
 > ⚠️ We recommend using Node version 16.x. Check [nvm](https://github.com/nvm-sh/nvm).
 
 1. `npm ci` to install dependencies.
-2. Copy contents of `.env.dist` into a `.env` file and populate it.
+2. Copy contents of `.env.dist` into a `.env` file and populate it. Ensure that environment variables have the prefix `VITE_`.
+
+For example:
+
+If your application requires a API_BASE_URL, name the enviroment variable "VITE_API_BASE_URL" in the '.env' file.
 
 # How to run
 
