@@ -6,9 +6,9 @@ export default function Root() {
 	return (
 		<>
 			<Navbar />
-			<div id="pages">
+			<main id="pages">
 				<Outlet />
-			</div>
+			</main>
 		</>
 	);
 }
