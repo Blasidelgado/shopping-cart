@@ -1,5 +1,7 @@
 import { useOutletContext } from 'react-router-dom';
 
+import Product from '@/components/product/Product';
+
 export type ProductType = {
 	id: number;
 	title: string;
@@ -10,18 +12,18 @@ export type ProductType = {
 		rate: number;
 		count: number;
 	};
+	amount?: number;
 };
 
 export default function Shop() {
-	const [products, setProducts] = useOutletContext() as [ProductType[], any];
-	console.log(products);
+	const [products, handleAddCart] = useOutletContext() as [ProductType[], any];
 	return (
-		<section className="flex items-center justify-center h-screen">
-			<ul>
-				{products?.map((product) => {
-					return <li key={product.id}>{product.title}</li>;
-				})}
-			</ul>
+		<section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+			{products?.map((product) => {
+				return (
+					<Product key={product.id} product={product} onClick={handleAddCart} />
+				);
+			})}
 		</section>
 	);
 }
