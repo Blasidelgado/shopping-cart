@@ -39,7 +39,7 @@ export default function Root() {
 				if (product.id === id) {
 					return {
 						...product,
-						amount: product.amount || 0 + amount,
+						amount: product.amount + amount,
 					};
 				}
 				return product;
@@ -52,6 +52,7 @@ export default function Root() {
 		const product = cart.find((product) => product.id === id);
 		// Product already in cart
 		if (product) {
+			console.log(id, amount);
 			updateAmount(id, amount);
 		} else {
 			// Product not in cart
