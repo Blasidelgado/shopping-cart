@@ -78,7 +78,7 @@ export default function Root() {
 		<>
 			<Navbar productCount={products.length} />
 			<main id="pages">
-				<Outlet context={[products, handleAddCart]} />
+				<Outlet context={[products, handleAddCart, cart]} />
 			</main>
 		</>
 	);
