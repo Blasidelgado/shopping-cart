@@ -1,6 +1,8 @@
 import { useState } from 'react';
 
-export default function Product({ product, onClick }: { product: object }) {
+import { ProductProps } from '@/types';
+
+export default function Product({ product, onClick }: ProductProps) {
 	const [amount, setAmount] = useState(0);
 
 	return (

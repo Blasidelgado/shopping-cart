@@ -1,11 +1,15 @@
 import { useOutletContext } from 'react-router-dom';
 
-import { ProductType } from '../shop/Shop';
+import { ProductType } from '@/types';
 
 export default function Checkout() {
-	const [, , cart] = useOutletContext() as [ProductType[], any, ProductType[]];
+	const [, , cart] = useOutletContext() as [
+		ProductType[],
+		(product: ProductType, amount: number) => void,
+		ProductType[],
+	];
 	const total = cart.reduce(
-		(acc, product) => acc + product.price * product.amount,
+		(acc, product) => acc + product.price * (product.amount || 0),
 		0,
 	);
 	return (
@@ -14,7 +18,7 @@ export default function Checkout() {
 				{cart.map((product) => (
 					<li key={product.id}>
 						Product: {product.title}, Amount: {product.amount}, Subtotal:{' '}
-						{product.price * product.amount}
+						{product.price * (product.amount || 0)}
 					</li>
 				))}
 			</ul>

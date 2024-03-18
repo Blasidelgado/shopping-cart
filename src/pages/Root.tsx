@@ -2,17 +2,16 @@ import { useQuery } from '@tanstack/react-query';
 import { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 
-import { ProductType } from './shop/Shop';
-
 import getProducts from '@/services';
+import { ProductType } from '@/types';
 
 import Navbar from '@components/navbar/Navbar';
 
 export default function Root() {
 	const [products, setProducts] = useState<ProductType[]>([]);
 	const [cart, setCart] = useState<ProductType[]>([]);
-	const [isPending, setIsPending] = useState(false);
-	const [isError, setIsError] = useState(false);
+	const [isPending, setIsPending] = useState<boolean>(false);
+	const [isError, setIsError] = useState<boolean>(false);
 
 	const {
 		isLoading,
@@ -28,7 +27,7 @@ export default function Root() {
 	useEffect(() => {
 		setIsPending(isLoading);
 		setIsError(queryIsError);
-		if (!isLoading && !queryIsError) {
+		if (!isLoading && !queryIsError && data) {
 			setProducts(data);
 		}
 	}, [isLoading, queryIsError, data]);
@@ -39,7 +38,7 @@ export default function Root() {
 				if (product.id === id) {
 					return {
 						...product,
-						amount: product.amount + amount,
+						amount: (product.amount || 0) + amount,
 					};
 				}
 				return product;
@@ -52,7 +51,6 @@ export default function Root() {
 		const product = cart.find((product) => product.id === id);
 		// Product already in cart
 		if (product) {
-			console.log(id, amount);
 			updateAmount(id, amount);
 		} else {
 			// Product not in cart
@@ -71,12 +69,12 @@ export default function Root() {
 	}
 
 	if (isError) {
-		return <div>Error: {error.message}</div>;
+		return <div>Error: {error?.message}</div>;
 	}
 
 	return (
 		<>
-			<Navbar productCount={products.length} />
+			<Navbar cartCount={cart.length} />
 			<main id="pages">
 				<Outlet context={[products, handleAddCart, cart]} />
 			</main>
