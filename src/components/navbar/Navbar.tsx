@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-const Navbar = ({ cartCount }) => {
+import { NavbarProps } from '@/types';
+
+const Navbar = ({ cartCount }: NavbarProps) => {
 	const [isOpen, setIsOpen] = useState(false);
 	const location = useLocation();
 
