@@ -4,12 +4,18 @@ import { ProductType } from '../shop/Shop';
 
 export default function Checkout() {
 	const [, , cart] = useOutletContext() as [ProductType[], any, ProductType[]];
-	const total = cart.reduce((acc, product) => acc + product.price, 0);
+	const total = cart.reduce(
+		(acc, product) => acc + product.price * product.amount,
+		0,
+	);
 	return (
 		<section>
 			<ul>
 				{cart.map((product) => (
-					<li key={product.id}>{product.title}</li>
+					<li key={product.id}>
+						Product: {product.title}, Amount: {product.amount}, Subtotal:{' '}
+						{product.price * product.amount}
+					</li>
 				))}
 			</ul>
 			<h4>Total is: {total}</h4>
