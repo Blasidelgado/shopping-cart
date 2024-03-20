@@ -1,10 +1,11 @@
+import { mount } from '@cypress/react18';
 import { MemoryRouter } from 'react-router-dom';
 
 import Home from '@pages/home/Home';
 
 describe('<Home>', () => {
 	it('mounts and navigates to shop page', () => {
-		cy.mount(
+		mount(
 			<MemoryRouter>
 				<Home />
 			</MemoryRouter>,
