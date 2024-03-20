@@ -8,7 +8,7 @@ export default function Home() {
 			<div className="pt-24">
 				<div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
 					<div className="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
-						<p className="uppercase tracking-loose w-full">
+						<p data-test="home-msg" className="uppercase tracking-loose w-full">
 							Come see our products
 						</p>
 						<h1 className="my-4 text-5xl font-bold leading-tight">

@@ -7,17 +7,15 @@ describe('Home page', () => {
 	it('Should render correctly', () => {
 		cy.getBySel('home-msg')
 			.should('be.visible')
-			.and('have.text', 'This is the homepage!');
+			.and('have.text', 'Come see our products');
 	});
 });
 
-describe('Shop page', () => {
+describe('Shop Page', () => {
 	beforeEach(() => {
 		cy.visit('/shop');
 	});
 	it('Should render correctly', () => {
-		cy.getBySel('shop-msg')
-			.should('be.visible')
-			.and('have.text', 'This is the shopping page!');
+		cy.getBySel('products-container').should('be.visible');
 	});
 });
