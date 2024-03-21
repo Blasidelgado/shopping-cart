@@ -9,6 +9,7 @@ export default defineConfig({
 	video: false,
 	screenshotOnRunFailure: false,
 	port: process.env.CYPRESS_HOST_PORT ? +process.env.CYPRESS_HOST_PORT : 3001,
+
 	e2e: {
 		setupNodeEvents(on, config) {
 			registerCodeCoverageTasks(on, config);
@@ -16,5 +17,12 @@ export default defineConfig({
 		},
 		baseUrl: process.env.CYPRESS_BASE_URL_PREFIX,
 		specPattern: 'cypress/tests/**/*.spec.{js,jsx,ts,tsx}',
+	},
+
+	component: {
+		devServer: {
+			framework: 'react',
+			bundler: 'vite',
+		},
 	},
 });

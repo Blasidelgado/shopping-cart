@@ -43,3 +43,9 @@ Cypress.Commands.add('getBySel', (selector, ...args) => {
 Cypress.Commands.add('getBySelLike', (selector, ...args) => {
 	return cy.get(`[data-test*=${selector}]`, ...args);
 });
+
+declare namespace Cypress {
+	interface Chainable {
+		mountApplication: (component: React.ReactElement, options: any) => void;
+	}
+}
