@@ -19,3 +19,7 @@ export interface ProductProps {
 	product: ProductType;
 	onClick: (product: ProductType, amount: number) => void;
 }
+
+export interface CheckoutAlertProps {
+	onClick: React.Dispatch<React.SetStateAction<boolean>>;
+}
