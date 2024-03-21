@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
 
+import CheckoutAlert from '@/components/alerts/checkoutAlert';
 import CheckoutProduct from '@/components/product/CheckoutProduct';
 import { ProductType } from '@/types';
 
@@ -178,7 +179,10 @@ export default function Checkout() {
 							</fieldset>
 						</section>
 					</div>
-					<button className="submit-button px-4 py-3 rounded-full bg-pink-400 text-white focus:ring focus:outline-none w-full text-xl font-semibold transition-colors">
+					<button
+						className="submit-button px-4 py-3 rounded-full bg-pink-400 text-white focus:ring focus:outline-none w-full text-xl font-semibold transition-colors0"
+						onClick={() => setIsPaid(true)}
+					>
 						Pay ${total}
 					</button>
 				</div>
@@ -207,6 +211,7 @@ export default function Checkout() {
 					</div>
 				</div>
 			</div>
+			{isPaid && <CheckoutAlert onClick={setIsPaid} />}
 		</section>
 	);
 }
