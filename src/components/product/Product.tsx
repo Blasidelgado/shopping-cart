@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { ProductProps } from '@/types';
 
 export default function Product({ product, onClick }: ProductProps) {
-	const [amount, setAmount] = useState(0);
+	const [amount, setAmount] = useState(1);
 
 	return (
 		<article
