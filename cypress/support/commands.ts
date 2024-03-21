@@ -44,8 +44,9 @@ Cypress.Commands.add('getBySelLike', (selector, ...args) => {
 	return cy.get(`[data-test*=${selector}]`, ...args);
 });
 
+// eslint-disable-next-line @typescript-eslint/no-namespace
 declare namespace Cypress {
 	interface Chainable {
-		mountApplication: (component: React.ReactElement, options: any) => void;
+		mountApplication: (component: React.ReactElement, options: unknown) => void;
 	}
 }
